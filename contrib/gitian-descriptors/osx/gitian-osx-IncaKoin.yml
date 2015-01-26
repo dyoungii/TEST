@@ -15,7 +15,7 @@ packages:
 reference_datetime: "2014-01-10 00:00:00"
 remotes:
 - "url": "https://github.com/dyoungii/TEST.git"
-  "dir": "IncaKoin"
+  "dir": "TEST"
 files:
 - "osx-native-depends-r3.tar.gz"
 - "osx-depends-r4.tar.gz"
@@ -40,6 +40,7 @@ script: |
   tar -C osx-cross-depends -xf osx-native-depends-r3.tar.gz
   tar -C osx-cross-depends -xf osx-depends-r4.tar.gz
   tar -C osx-cross-depends -xf osx-depends-qt-5.2.1-r4.tar.gz
+  cp -r $HOME/build/TEST $HOME/build/IncaKoin  
 
   export PATH=`pwd`/osx-cross-depends/native-prefix/bin:$PATH
 
