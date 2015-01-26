@@ -140,8 +140,8 @@ contains(FIRST_CLASS_MESSAGING, 1) {
     DEFINES += FIRST_CLASS_MESSAGING
 }
 
-contains(BITCOIN_NEED_QT_PLUGINS, 1) {
-    DEFINES += BITCOIN_NEED_QT_PLUGINS
+contains(INCAKOIN_NEED_QT_PLUGINS, 1) {
+    DEFINES += INCAKOIN_NEED_QT_PLUGINS
     QTPLUGIN += qcncodecs qjpcodecs qtwcodecs qkrcodecs qtaccessiblewidgets
 }
 
@@ -321,7 +321,6 @@ RESOURCES += \
 FORMS += \
     src/qt/forms/sendcoinsdialog.ui \
 	src/qt/forms/coincontroldialog.ui \
-	src/qt/forms/coincontroldialog.ui \
     src/qt/forms/addressbookpage.ui \
     src/qt/forms/signverifymessagedialog.ui \
     src/qt/forms/aboutdialog.ui \
@@ -340,21 +339,29 @@ SOURCES += src/qt/qrcodedialog.cpp
 FORMS += src/qt/forms/qrcodedialog.ui
 }
 
-contains(BITCOIN_QT_TEST, 1) {
+contains(INCAKOIN_QT_TEST, 1) {
+SOURCES -= src/qt/IncaKoin.cpp
 SOURCES += src/qt/test/test_main.cpp \
-    src/qt/test/uritests.cpp
-HEADERS += src/qt/test/uritests.h
+           src/qt/test/uritests.cpp \
+           src/qt/qrcodedialog.cpp
+HEADERS += src/qt/test/uritests.h \
+           src/qt/qrcodedialog.h
+FORMS += src/qt/forms/qrcodedialog.ui
 DEPENDPATH += src/qt/test
 QT += testlib
-TARGET = bitcoin-qt_test
-DEFINES += BITCOIN_QT_TEST
+DEFINES += USE_QRCODE
+LIBS += -lqrencode
+TARGET = IncaKoin-qt_test
+DEFINES += INCAKOIN_QT_TEST
+  macx: CONFIG -= app_bundle
 }
 
+# Todo: Remove this line when switching to Qt5, as that option was removed
 CODECFORTR = UTF-8
 
 # for lrelease/lupdate
-# also add new translations to src/qt/bitcoin.qrc under translations/
-TRANSLATIONS = $$files(src/qt/locale/bitcoin_*.ts)
+# also add new translations to src/qt/IncaKoin.qrc under translations/
+TRANSLATIONS = $$files(src/qt/locale/IncaKoin_*.ts)
 
 isEmpty(QMAKE_LRELEASE) {
     win32:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\\lrelease.exe
@@ -412,7 +419,7 @@ isEmpty(BOOST_INCLUDE_PATH) {
 
 # win32:LIBS += -lws2_32 -lshlwapi -lmswsock
 win32:DEFINES += WIN32
-win32:RC_FILE = src/qt/res/bitcoin-qt.rc
+win32:RC_FILE = src/qt/res/IncaKoin-qt.rc
 
 win32:!contains(MINGW_THREAD_BUGFIX, 0) {
     # At least qmake's win32-g++-cross profile is missing the -lmingwthrd

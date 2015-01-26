@@ -45,7 +45,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile IncaKoin-1.0.0.2-win32-setup.exe
+OutFile IncaKoin-1.2.0-win32-setup.exe
 InstallDir $PROGRAMFILES\IncaKoin
 CRCCheck on
 XPStyle on
