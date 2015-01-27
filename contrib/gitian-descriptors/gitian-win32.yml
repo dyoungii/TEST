@@ -29,7 +29,7 @@ script: |
   cd $STAGING
   unzip ../build/qt-win32-4.8.6-gitian-r7.zip
   unzip ../build/boost-win32-1.55.0-gitian-r6.zip
-  unzip ../build/IncaKoin-deps-win32-gitian-r12.zip
+  unzip ../build/bitcoin-deps-win32-gitian-r12.zip
   cp -r $HOME/build/TEST $HOME/build/IncaKoin
   cd $HOME/build/
   #
