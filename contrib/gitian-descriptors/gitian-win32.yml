@@ -56,7 +56,7 @@ script: |
    $HOST-strip IncaKoind.exe
    mkdir $OUTDIR/daemon
    cp IncaKoind.exe $OUTDIR/daemon
- cd ..
+  cd $OUTDIR
   mkdir nsis
   git archive HEAD | tar -x -C nsis
   cd nsis/src
