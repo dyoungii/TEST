@@ -5,9 +5,9 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.0.0.2
+!define VERSION 1.2.0
 !define COMPANY "IncaKoin project"
-!define URL http://www.org/
+!define URL http://incakoin.info/
 
 # MUI Symbol Definitions
 !define MUI_ICON "../share/pixmaps/bitcoin.ico"
