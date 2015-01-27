@@ -13,8 +13,8 @@ packages:
 - "faketime"
 reference_datetime: "2014-01-10 00:00:00"
 remotes:
-- "url": "https://github.com/dyoungii/TEST.git"
-  "dir": "TEST"
+- "url": "https://github.com/NKAKoin/test.git"
+  "dir": "IncaKoin"
 files:
 - "qt-win32-4.8.5-gitian-r5.zip"
 - "qt-win64-4.8.5-gitian-r5.zip"
@@ -57,7 +57,8 @@ script: |
     unzip $INDIR/boost-win${BITS}-1.55.0-gitian-r6.zip
     unzip $INDIR/bitcoin-deps-win${BITS}-gitian-r13.zip
     unzip $INDIR/protobuf-win${BITS}-2.5.0-gitian-r4.zip
-    cp -r $HOME/build/TEST $HOME/build/IncaKoin    
+    cp -r $HOME/build/TEST $HOME/build/IncaKoin 
+	
 
     if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
@@ -77,7 +78,7 @@ script: |
     export LD_PRELOAD=/usr/lib/faketime/libfaketime.so.1
     export FAKETIME=$REFERENCE_DATETIME
     ln -s $STAGING $HOME/qt
-    $STAGING/host/bin/qmake IncaKoin-qt.pro -spec unsupported/win32-g++-cross MINIUPNPC_LIB_PATH=$STAGING MINIUPNPC_INCLUDE_PATH=$STAGING BDB_LIB_PATH=$STAGING BDB_INCLUDE_PATH=$STAGING BOOST_LIB_PATH=$STAGING BOOST_INCLUDE_PATH=$STAGING BOOST_LIB_SUFFIX=-mt-s BOOST_THREAD_LIB_SUFFIX=_win32-mt-s OPENSSL_LIB_PATH=$STAGING OPENSSL_INCLUDE_PATH=$STAGING QRENCODE_LIB_PATH=$STAGING QRENCODE_INCLUDE_PATH=$STAGING USE_QRCODE=1 INCLUDEPATH=$STAGING DEFINES=BOOST_THREAD_USE_LIB BITCOIN_NEED_QT_PLUGINS=1 QMAKE_LRELEASE=lrelease QMAKE_CXXFLAGS=-frandom-seed=IncaKoin USE_BUILD_INFO=1 USE_SSE2=1 USE_UPNP=1
+    $STAGING/host/bin/qmake -spec unsupported/win32-g++-cross MINIUPNPC_LIB_PATH=$STAGING MINIUPNPC_INCLUDE_PATH=$STAGING BDB_LIB_PATH=$STAGING BDB_INCLUDE_PATH=$STAGING BOOST_LIB_PATH=$STAGING BOOST_INCLUDE_PATH=$STAGING BOOST_LIB_SUFFIX=-mt-s BOOST_THREAD_LIB_SUFFIX=_win32-mt-s OPENSSL_LIB_PATH=$STAGING OPENSSL_INCLUDE_PATH=$STAGING QRENCODE_LIB_PATH=$STAGING QRENCODE_INCLUDE_PATH=$STAGING USE_QRCODE=1 INCLUDEPATH=$STAGING DEFINES=BOOST_THREAD_USE_LIB BITCOIN_NEED_QT_PLUGINS=1 QMAKE_LRELEASE=lrelease QMAKE_CXXFLAGS=-frandom-seed=IncaKoin USE_BUILD_INFO=1 USE_SSE2=1 USE_UPNP=1
     make V=1 $MAKEOPTS
     $HOST-strip release/IncaKoin-qt.exe
     cp -f release/IncaKoin-qt.exe $BINDIR/

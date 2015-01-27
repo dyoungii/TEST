@@ -5,12 +5,12 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.2.0.
-!define COMPANY "IncaKoin"
-!define URL http://incakoin.info/
+!define VERSION 1.0.0.2
+!define COMPANY "IncaKoin project"
+!define URL http://www.org/
 
 # MUI Symbol Definitions
-!define MUI_ICON "../share/pixmaps/IncaKoin.icns"
+!define MUI_ICON "../share/pixmaps/bitcoin.ico"
 !define MUI_WELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
@@ -51,13 +51,13 @@ CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 1.0.0.2
+VIProductVersion 1.2.0
 VIAddVersionKey ProductName IncaKoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
 VIAddVersionKey FileVersion "${VERSION}"
-VIAddVersionKey FileDescription ""
+VIAddVersionKey FileDescription "IncaKoin [NKA] SHA256D, Proof of Work+Proof of Stake"
 VIAddVersionKey LegalCopyright ""
 InstallDirRegKey HKCU "${REGKEY}" Path
 ShowUninstDetails show

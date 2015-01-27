@@ -23,7 +23,7 @@ packages:
 - "libqt4-test"
 reference_datetime: "2014-01-10 00:00:00"
 remotes:
-- "url": "https://github.com/dyoungii/TEST.git"
+- "url": "https://github.com/NKAKoin/test.git"
   "dir": "IncaKoin"
 files:
 - "bitcoin-deps-linux32-gitian-r6.zip"
