@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.2.0
+!define VERSION 1.2.0.0
 !define COMPANY "IncaKoin project"
 !define URL http://incakoin.info/
 
@@ -45,13 +45,13 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile IncaKoin-1.2.0-win32-setup.exe
+OutFile IncaKoin-${VERSION}-win32-setup.exe
 InstallDir $PROGRAMFILES\IncaKoin
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 1.2.0
+VIProductVersion ${VERSION}
 VIAddVersionKey ProductName IncaKoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
