@@ -3,7 +3,7 @@ name: "osx-qt"
 suites:
 - "precise"
 architectures:
-- "i386"
+- "amd64"
 packages:
 - "git-core"
 - "automake"
