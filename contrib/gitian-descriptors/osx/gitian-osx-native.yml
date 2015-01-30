@@ -3,7 +3,7 @@ name: "osx-native"
 suites:
 - "precise"
 architectures:
-- "i386"
+- "i386.96"
 packages:
 - "git-core"
 - "automake"
