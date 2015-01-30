@@ -24,7 +24,7 @@ packages:
 reference_datetime: "2014-01-10 00:00:00"
 remotes:
 - "url": "https://github.com/dyoungii/TEST.git"
-  "dir": "IncaKoin"
+  "dir": "TEST"
 files:
 - "bitcoin-deps-linux32-gitian-r6.zip"
 - "bitcoin-deps-linux64-gitian-r6.zip"
@@ -59,6 +59,7 @@ script: |
   unzip ../build/bitcoin-deps-linux${GBUILD_BITS}-gitian-r6.zip
   unzip ../build/boost-linux${GBUILD_BITS}-1.55.0-gitian-r1.zip
   tar -zxf ../build/qt-linux${GBUILD_BITS}-4.6.4-gitian-r1.tar.gz
+  cp -r $HOME/build/TEST $HOME/build/IncaKoin
   cd ../build
 
   # Avoid exporting *any* symbols from the executable
