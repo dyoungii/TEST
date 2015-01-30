@@ -3,6 +3,7 @@ name: "bitcoin"
 suites:
 - "precise"
 architectures:
+- "i386"
 - "amd64"
 packages:
 - "g++"
