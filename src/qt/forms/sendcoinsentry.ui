@@ -109,6 +109,12 @@
         <iconset resource="../IncaKoin.qrc">
          <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
        <property name="shortcut">
         <string>Alt+A</string>
        </property>
@@ -126,6 +132,12 @@
         <iconset resource="../IncaKoin.qrc">
          <normaloff>:/icons/editpaste</normaloff>:/icons/editpaste</iconset>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
        <property name="shortcut">
         <string>Alt+P</string>
        </property>
@@ -142,6 +154,12 @@
        <property name="icon">
         <iconset resource="../IncaKoin.qrc">
          <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
        </property>
       </widget>
      </item>
