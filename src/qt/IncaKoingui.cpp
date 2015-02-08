@@ -328,6 +328,7 @@ void IncaKoinGUI::createMenuBar()
     file->addAction(verifyMessageAction);
     file->addSeparator();
     file->addAction(quitAction);
+	file->setIconSize(QSize(32, 32));
 
     QMenu *settings = appMenuBar->addMenu(tr("&Settings"));
     settings->addAction(optionsAction);
@@ -348,7 +349,6 @@ void IncaKoinGUI::createToolBars()
 {
     QToolBar *toolbar = addToolBar(tr("Tabs toolbar"));
     toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-	toolBar->setIconSize(QSize(32, 32));
     toolbar->addAction(overviewAction);
     toolbar->addAction(sendCoinsAction);
     toolbar->addAction(receiveCoinsAction);
@@ -357,7 +357,6 @@ void IncaKoinGUI::createToolBars()
 
     QToolBar *toolbar2 = addToolBar(tr("Actions toolbar"));
     toolbar2->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-	toolBar2->setIconSize(QSize(32, 32));
     toolbar2->addAction(blockAction);
     toolbar2->addAction(exportAction);
 }

@@ -72,8 +72,8 @@
         <file alias="es_CL">locale/IncaKoin_es_CL.qm</file>
         <file alias="et">locale/IncaKoin_et.qm</file>
         <file alias="eu_ES">locale/IncaKoin_eu_ES.qm</file>
-        <file alias="da">locale/IncaKoin_fa.qm</file>
-        <file alias="da_IR">locale/IncaKoin_fa_IR.qm</file>
+        <file alias="fa">locale/IncaKoin_fa.qm</file>
+        <file alias="fa_IR">locale/IncaKoin_fa_IR.qm</file>
         <file alias="fi">locale/IncaKoin_fi.qm</file>
         <file alias="fr">locale/IncaKoin_fr.qm</file>
         <file alias="fr_CA">locale/IncaKoin_fr_CA.qm</file>
