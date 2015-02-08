@@ -219,6 +219,7 @@ void IncaKoinGUI::createActions()
     QActionGroup *tabGroup = new QActionGroup(this);
 
     overviewAction = new QAction(QIcon(":/icons/overview"), tr("&Overview"), this);
+	overviewAction->setIconSize(const 34 & 34)
     overviewAction->setToolTip(tr("Show general overview of wallet"));
     overviewAction->setCheckable(true);
     overviewAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_1));
@@ -328,7 +329,6 @@ void IncaKoinGUI::createMenuBar()
     file->addAction(verifyMessageAction);
     file->addSeparator();
     file->addAction(quitAction);
-	file->setIconSize(QSize(32, 32));
 
     QMenu *settings = appMenuBar->addMenu(tr("&Settings"));
     settings->addAction(optionsAction);
