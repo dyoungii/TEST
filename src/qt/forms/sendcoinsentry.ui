@@ -50,7 +50,13 @@
     </widget>
    </item>
    <item row="5" column="1">
-    <widget class="IncaKoinAmountField" name="payAmount"/>
+    <widget class="IncaKoinAmountField" name="payAmount">
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+    </widget>
    </item>
    <item row="4" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -89,8 +95,26 @@
      </property>
      <item>
       <widget class="QValidatedLineEdit" name="payTo">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>30</height>
+        </size>
+       </property>
        <property name="toolTip">
         <string>The address to send the payment to  (e.g. NMPP3KWNxXiS3BjiYoNqvm33BkR1up9szu)</string>
+       </property>
+       <property name="text">
+        <string/>
        </property>
        <property name="maxLength">
         <number>34</number>
