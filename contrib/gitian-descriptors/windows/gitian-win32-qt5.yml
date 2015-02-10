@@ -16,9 +16,10 @@ remotes:
 - "url": "https://github.com/dyoungii/TEST.git"
   "dir": "TEST"
 files:
-- "qt-win32-5.2.0-gitian-r8.zip"
+- "qt-win32-5.2.0-gitian-r3.zip"
 - "boost-win32-1.55.0-gitian-r6.zip"
-- "bitcoin08-deps-win32-gitian-r13.zip"
+- "bitcoin-deps-win32-gitian-r16.zip"
+- "protobuf-win32-2.5.0-gitian-r4.zip"
 script: |
   #
   STAGING=$HOME/staging
@@ -26,9 +27,10 @@ script: |
   #
   mkdir -p $STAGING
   cd $STAGING
-  unzip ../build/qt-win32-5.2.0-gitian-r8.zip
+  unzip ../build/qt-win32-5.2.0-gitian-r3.zip
   unzip ../build/boost-win32-1.55.0-gitian-r6.zip
-  unzip ../build/bitcoin08-deps-win32-gitian-r13.zip
+  unzip ../build/bitcoin-deps-win32-gitian-r16.zip
+  unzip ../build/protobuf-win32-2.5.0-gitian-r4.zip
   cd $HOME/build/
   cp -r $HOME/build/TEST $HOME/build/IncaKoin
   rm -rf $HOME/build/TEST
@@ -43,7 +45,7 @@ script: |
   export FAKETIME=$REFERENCE_DATETIME
   export TZ=UTC
   ln -s $STAGING $HOME/qt
-  $HOME/staging/host/bin/qmake IncaKoin-qt.pro -spec unsupported/win32-g++-cross MINIUPNPC_LIB_PATH=$STAGING MINIUPNPC_INCLUDE_PATH=$STAGING BDB_LIB_PATH=$STAGING BDB_INCLUDE_PATH=$STAGING BOOST_LIB_PATH=$STAGING BOOST_INCLUDE_PATH=$STAGING BOOST_LIB_SUFFIX=-mt-s BOOST_THREAD_LIB_SUFFIX=_win32-mt-s OPENSSL_LIB_PATH=$STAGING OPENSSL_INCLUDE_PATH=$STAGING QRENCODE_LIB_PATH=$STAGING QRENCODE_INCLUDE_PATH=$STAGING USE_QRCODE=1 INCLUDEPATH=$STAGING DEFINES=BOOST_THREAD_USE_LIB BITCOIN_NEED_QT_PLUGINS=1 QMAKE_LRELEASE=lrelease QMAKE_CXXFLAGS=-frandom-seed=IncaKoin USE_BUILD_INFO=1 USE_SSE2=1
+  $HOME/staging/host/bin/qmake -spec unsupported/win32-g++-cross MINIUPNPC_LIB_PATH=$STAGING MINIUPNPC_INCLUDE_PATH=$STAGING BDB_LIB_PATH=$STAGING BDB_INCLUDE_PATH=$STAGING BOOST_LIB_PATH=$STAGING BOOST_INCLUDE_PATH=$STAGING BOOST_LIB_SUFFIX=-mt-s BOOST_THREAD_LIB_SUFFIX=_win32-mt-s OPENSSL_LIB_PATH=$STAGING OPENSSL_INCLUDE_PATH=$STAGING QRENCODE_LIB_PATH=$STAGING QRENCODE_INCLUDE_PATH=$STAGING USE_QRCODE=1 INCLUDEPATH=$STAGING DEFINES=BOOST_THREAD_USE_LIB BITCOIN_NEED_QT_PLUGINS=1 QMAKE_LRELEASE=lrelease QMAKE_CXXFLAGS=-frandom-seed=IncaKoin USE_BUILD_INFO=1 USE_SSE2=1
   make $MAKEOPTS
   $HOST-strip release/IncaKoin-qt.exe
   cp release/IncaKoin-qt.exe $OUTDIR/
