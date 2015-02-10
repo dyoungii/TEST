@@ -57,7 +57,7 @@ VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
 VIAddVersionKey FileVersion "${VERSION}"
-VIAddVersionKey FileDescription "IncaKoin [NKA] SHA256D, Proof of Work+Proof of Stake"
+VIAddVersionKey FileDescription "IncaKoin [INCA] SHA256D, Proof of Work+Proof of Stake"
 VIAddVersionKey LegalCopyright ""
 InstallDirRegKey HKCU "${REGKEY}" Path
 ShowUninstDetails show

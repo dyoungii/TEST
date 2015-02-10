@@ -1,5 +1,5 @@
 from distutils.core import setup
-setup(name='nkaspendfrom',
+setup(name='incaspendfrom',
       version='1.0',
       description='Command-line utility for IncaKoin "coin control"',
       author='Gavin Andresen',

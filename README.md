@@ -1,4 +1,4 @@
-IncaKoin [NKA]
+IncaKoin [INCA]
 
 SHA256D, Proof of Work+Proof of Stake
 
