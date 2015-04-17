@@ -25,7 +25,6 @@ class DockIconClickEventHandler;
 class MacDockIconHandler : public QObject
 {
     Q_OBJECT
-
 public:
     ~MacDockIconHandler();
 
