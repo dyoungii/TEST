@@ -79,5 +79,5 @@ script: |
   /usr/bin/install -c contrib/macdeploy/background.png dist/.background
   /usr/bin/install -c contrib/macdeploy/DS_Store dist/.DS_Store
   cd dist; ln -s /Applications Applications; cd ..
-  genisoimage -no-cache-inodes -l -probe -V "Darkcoil-Qt" -no-pad -r -apple -o IncaKoin-Qt.dmg dist
+  genisoimage -no-cache-inodes -l -probe -V "IncaKoin-Qt" -no-pad -r -apple -o IncaKoin-Qt.dmg dist
   dmg dmg IncaKoin-Qt.dmg /home/ubuntu/out/IncaKoin-Qt.dmg
