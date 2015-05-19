@@ -1,5 +1,5 @@
 ---
-name: "darkcoil"
+name: "IncaKoin"
 suites:
 - "precise"
 architectures:
@@ -14,8 +14,8 @@ packages:
 
 reference_datetime: "2014-01-10 00:00:00"
 remotes:
-- "url": "https://github.com/vertoe/darkcoil.git"
-  "dir": "darkcoil"
+- "url": "https://github.com/dyoungii/test.git"
+  "dir": "IncaKoin"
 files:
 - "osx-native-depends-r3.tar.gz"
 - "osx-depends-r4.tar.gz"
@@ -45,9 +45,9 @@ script: |
 
   if [ "$NEEDDIST" == "1" ]; then
     # Make source code archive which is architecture independent so it only needs to be done once
-    cd $HOME/build/darkcoil
+    cd $HOME/build/IncaKoin
     git archive HEAD --format=tar.gz > darkcoil.tar.gz
-    DISTNAME=`echo darkcoil.tar.gz`
+    DISTNAME=`echo IncaKoin.tar.gz`
     NEEDDIST=0
   fi
 
@@ -56,18 +56,18 @@ script: |
 
   mkdir -p distsrc
   cd distsrc
-  tar -xvf $HOME/build/darkcoil/darkcoil.tar.gz
+  tar -xvf $HOME/build/IncaKoin/IncaKoin.tar.gz
 
-  sed 's/mmacosx-version-min\=10.5/mmacosx-version-min=10.6/' -i bitcoin-qt.pro
-  sed 's/10.5/10.7/' -i bitcoin-qt.pro
-  sed 's/\/Developer\//\/home\/ubuntu\/build\/osx-cross-depends\//' -i bitcoin-qt.pro
-  sed 's/10.5/10.7/' -i bitcoin-qt.pro
-  sed 's/arch i386/arch x86_64/' -i bitcoin-qt.pro
-  sed 's/CXX $(MAKE)/CXX AR=x86_64-apple-darwin11-ar $(MAKE)/' -i bitcoin-qt.pro
+  sed 's/mmacosx-version-min\=10.5/mmacosx-version-min=10.6/' -i IncaKoin-qt.pro
+  sed 's/10.5/10.7/' -i IncaKoin-qt.pro
+  sed 's/\/Developer\//\/home\/ubuntu\/build\/osx-cross-depends\//' -i IncaKoin-qt.pro
+  sed 's/10.5/10.7/' -i IncaKoin-qt.pro
+  sed 's/arch i386/arch x86_64/' -i IncaKoin-qt.pro
+  sed 's/CXX $(MAKE)/CXX AR=x86_64-apple-darwin11-ar $(MAKE)/' -i IncaKoin-qt.pro
 
   qmake -spec macx-clang-linux MINIUPNPC_LIB_PATH=$PREFIX/lib MINIUPNPC_INCLUDE_PATH=$PREFIX/include BDB_LIB_PATH=$PREFIX/lib BDB_INCLUDE_PATH=$PREFIX/include BOOST_LIB_PATH=$PREFIX/lib BOOST_INCLUDE_PATH=$PREFIX/include BOOST_LIB_SUFFIX=-mt-s OPENSSL_LIB_PATH=$PREFIX/lib OPENSSL_INCLUDE_PATH=$PREFIX/include QRENCODE_LIB_PATH=$PREFIX/lib QRENCODE_INCLUDE_PATH=$PREFIX/include USE_QRCODE=1 INCLUDEPATH=$PREFIX/include DEFINES=BOOST_THREAD_USE_LIB QMAKE_LRELEASE=lrelease USE_BUILD_INFO=1 USE_SSE2=1 USE_UPNP=1 RELEASE=1
   make TARGET_OS=Darwin
-  INSTALLNAMETOOL=/home/ubuntu/build/osx-cross-depends/native-prefix/bin/x86_64-apple-darwin11-install_name_tool  OTOOL=/home/ubuntu/build/osx-cross-depends/native-prefix/bin/x86_64-apple-darwin11-otool STRIP=/home/ubuntu/build/osx-cross-depends/native-prefix/bin/x86_64-apple-darwin11-strip ./contrib/macdeploy/macdeployqtplus Darkcoil-Qt.app -add-qt-tr da,de,es,hu,ru,uk,zh_CN,zh_TW -verbose 2
+  INSTALLNAMETOOL=/home/ubuntu/build/osx-cross-depends/native-prefix/bin/x86_64-apple-darwin11-install_name_tool  OTOOL=/home/ubuntu/build/osx-cross-depends/native-prefix/bin/x86_64-apple-darwin11-otool STRIP=/home/ubuntu/build/osx-cross-depends/native-prefix/bin/x86_64-apple-darwin11-strip ./contrib/macdeploy/macdeployqtplus IncaKoin-Qt.app -add-qt-tr da,de,es,hu,ru,uk,zh_CN,zh_TW -verbose 2
 
 
   export LD_PRELOAD=/usr/lib/faketime/libfaketime.so.1
@@ -79,5 +79,5 @@ script: |
   /usr/bin/install -c contrib/macdeploy/background.png dist/.background
   /usr/bin/install -c contrib/macdeploy/DS_Store dist/.DS_Store
   cd dist; ln -s /Applications Applications; cd ..
-  genisoimage -no-cache-inodes -l -probe -V "Darkcoil-Qt" -no-pad -r -apple -o Darkcoil-Qt.dmg dist
-  dmg dmg Darkcoil-Qt.dmg /home/ubuntu/out/Darkcoil-Qt.dmg
+  genisoimage -no-cache-inodes -l -probe -V "Darkcoil-Qt" -no-pad -r -apple -o IncaKoin-Qt.dmg dist
+  dmg dmg IncaKoin-Qt.dmg /home/ubuntu/out/IncaKoin-Qt.dmg
