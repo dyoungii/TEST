@@ -1,6 +1,6 @@
 TEMPLATE = app
 TARGET = IncaKoin-qt
-macx:TARGET = "Darkcoil-Qt"
+macx:TARGET = "IncaKoin-Qt"
 VERSION = 1.2.0
 INCLUDEPATH += src src/json src/qt
 QT += network
